@@ -9,10 +9,8 @@ To avoid re-processing the same file, once it has been processed, the
 file is moved to a 'processed' folder within the specified directory.
 
 Suggested Improvements:
-* Currently checking whole contents of a given directory (resources/unprocessed) 
-* but this can be improved allowing this to be an input field - and the directory
-* above can be overwritten.
-* 
+* The program currently checks the whole contents of a given directory (everything under resources/unprocessed) but this can be improved allowing this to be an input field - and the default directory can be overwritten.    
+
 ### CustomerAPI
 
 This API is created to handle saving and retrieving 
@@ -29,7 +27,7 @@ Customer Details.
 
   | parameter    | type   |
   |--------------|--------|
-  | customerRef  | Long   |
+  | customerReference  | String |
   | firstName    | String |
   | lastName     | String |
   | addressLine1 | String |
@@ -50,7 +48,7 @@ Customer Details.
 
 ### Get Customer Details
 ##### Request
-`GET /getCustomerDetail/{id}`   
+`GET /getCustomerDetail/{customerReference}`   
 
     curl -i http://localhost:8080/getCustomerDetail/123
 
